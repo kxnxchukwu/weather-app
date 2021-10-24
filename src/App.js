@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react";
 import './App.css';
+import ErrorPage from "./components/ErrorPage";
+import LoadingPage from "./components/LoadingPage";
+import TodayCard from './components/TodayCard';
 
 function App() {
+  const [data, setData] = useState({});
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(true)
+  const city = "Dublin";
+
+    useEffect(() => {
+      fetch(`${process.env.REACT_APP_API_URL}/weather/?q=${city}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
+      .then(response => response.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+    }
+      ).catch(error => setError(error.message)) 
+    }, [])
+
+    if (loading) return <LoadingPage/>
+    if (error) return <ErrorPage message = {error} />
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <TodayCard data = {data} />
   );
 }
 
 export default App;
+
