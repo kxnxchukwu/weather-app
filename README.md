@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fcddf696-17ab-4b89-9604-3a6a5fc49158/deploy-status)](https://app.netlify.com/sites/awesome-ptolemy-6ba854/deploys)
+
 # Weather App
 The Weather App uses the Open Weather Map API to show weather information for a particular city. Use this app to practice useEffect and useState in React.
 
