@@ -37,8 +37,8 @@ function TodayCard (props) {
 		</div>
 
 		<div className="flex">
-		  <p className="temp">Minimum Temprature: {temp_min} &deg;C</p>
-		  <p className="temp">Maximum Temprature: {temp_max} &deg;C</p>
+		  <p className="temp">Min Temprature: {temp_min} &deg;C</p>
+		  <p className="temp">Max Temprature: {temp_max} &deg;C</p>
 	
 		</div>
 
