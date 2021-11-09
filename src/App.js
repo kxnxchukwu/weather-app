@@ -11,7 +11,7 @@ function App() {
   const city = "Dublin";
 
     useEffect(() => {
-      fetch(`${REACT_APP_API_URL}/weather/?q=${city}&units=metric&APPID=${REACT_APP_API_KEY}`)
+      fetch(`${process.env.REACT_APP_API_URL}/weather/?q=${city}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
       .then(response => response.json())
       .then((data) => {
         setData(data);
