@@ -13,7 +13,7 @@ function TodayCard (props) {
 
 
     return (
-		<div className="main mx-auto mt-5 pt-5">
+		<div className="main mx-auto m-5 p-5">
 		<p className="header">{name}</p>
 
 		<div className="flex">
